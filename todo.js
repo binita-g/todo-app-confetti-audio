@@ -19,12 +19,17 @@ function addTask() {
         li.addEventListener('click', function(e) {
             e.target.classList.toggle('clicked');
 
-            // Play confetti for 3 seconds if task is completed.
+            // Task is completed
             if (e.target.classList.contains('clicked')) {
+                // Display confetti
                 startConfetti();
                 setTimeout(function() {
                     stopConfetti();
                 }, 3000);
+
+                // Play audio
+                var audio = new Audio('sounds/615100__mlaudio__magic-game-win-success-2.wav');
+                audio.play();
             }
         });
     }
